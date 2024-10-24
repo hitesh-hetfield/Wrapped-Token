@@ -1,26 +1,12 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 require("@nomicfoundation/hardhat-toolbox");
-require("@openzeppelin/hardhat-upgrades");
 require("dotenv").config();
 const { wanchainTestnet } = require("viem/chains");
 
 account_pvt_key = process.env.PVT_KEY !== undefined ? [process.env.PVT_KEY] : []
 
 module.exports = {
-  solidity: {
-    compilers: [
-      {
-        version: "0.4.22",
-        settings: {
-          evmVersion: "london",
-          optimizer: {
-            enabled: false,
-            runs: 200,
-          },
-        },
-      },
-    ],
-  },
+  solidity: "0.4.22",
   networks: {
     thunder: {
       url: "https://rpc.testnet.5ire.network",
