@@ -6,7 +6,7 @@ const { wanchainTestnet } = require("viem/chains");
 account_pvt_key = process.env.PVT_KEY !== undefined ? [process.env.PVT_KEY] : []
 
 module.exports = {
-  solidity: "0.4.22",
+  solidity: "0.8.22",
   networks: {
     thunder: {
       url: "https://rpc.testnet.5ire.network",
@@ -30,14 +30,14 @@ module.exports = {
       qa: process.env.API_KEY !== undefined ? [process.env.API_KEY] : []
     },
   customChains: [
-    {
-      network: "thunder",
-        chainId: 997,
-        urls: {
-          apiURL: "https://contract.evm.testnet.5ire.network/5ire/verify",
-          browserURL: "https://testnet.5irescan.io/dashboard"
-        }
-      },
+    // {
+    //   network: "thunder",
+    //     chainId: 997,
+    //     urls: {
+    //       apiURL: "https://contract.evm.testnet.5ire.network/5ire/verify",
+    //       browserURL: "https://testnet.5irescan.io/dashboard"
+    //     }
+    //   },
       {
         network: "qa",
           chainId: 997,
