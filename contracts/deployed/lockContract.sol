@@ -30,7 +30,7 @@ contract lockContract is lockCoins, WmbApp {
         uint256 amount,
         uint256 gasLimit
     ) public payable {
-        lockCoin();
+        _lockCoin(msg.sender, amount);
         uint fee = estimateFee(toChainId, gasLimit);
         _dispatchMessage(toChainId, toSC, abi.encode(toUser, amount), fee);
     }   

@@ -22,11 +22,12 @@ contract lockCoins {
     // }
 
     /* Lock native coins */
-    function lockCoin() public payable {
-        balances[msg.sender] += msg.value;
+    function _lockCoin(address user, uint256 amount) internal {
+        require(msg.sender == user, "Only owner can Lock Coins");
+        balances[msg.sender] += amount;
 
-        totalSupply += msg.value;
-        emit coinsLocked(msg.sender, msg.value);
+        totalSupply += amount;
+        emit coinsLocked(msg.sender, amount);
     }
 
     /* Withdraw coins to be used if coins are locked accidentally */
